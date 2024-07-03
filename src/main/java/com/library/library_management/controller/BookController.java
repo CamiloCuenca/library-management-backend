@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping (path = "books")
+@RequestMapping (path = "v1/books")
 public class BookController {
     @Autowired
     private final BookService bookService;
@@ -23,7 +23,7 @@ public class BookController {
         return bookService.getBooks();
     }
 
-    @GetMapping("/bookId")
+    @GetMapping("/{bookId}")
     public Optional<Book> getById(@PathVariable("bookId") Long bookId){
         return bookService.getBook(bookId);
     }
@@ -33,7 +33,7 @@ public class BookController {
         bookService.saveOrUpdate(book);
     }
 
-    @DeleteMapping("/bookId")
+    @DeleteMapping("/{bookId}")
     public void saveUpdate(@PathVariable("bookId") Long bookId){
         bookService.delete(bookId);
     }
