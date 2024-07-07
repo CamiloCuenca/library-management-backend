@@ -3,6 +3,8 @@ package com.library.library_management.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.sql.Timestamp;
+
 
 @Data
 @Entity
@@ -16,5 +18,11 @@ public class User {
     private String lastName;
     private String email;
     private String password;
-    private String registrationDate;
+
+    /*
+    insertable = false, updatable = false: Estas propiedades indican a JPA que no debe incluir esta columna en las sentencias
+    INSERT y UPDATE, ya que su valor se establece automáticamente en la base de datos.
+     */
+    @Column(name = "registration_date", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Timestamp registrationDate;
 }
