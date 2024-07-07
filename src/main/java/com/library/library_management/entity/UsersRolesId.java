@@ -15,6 +15,14 @@ public class UsersRolesId implements Serializable {
     private Long roleId;
 
     // Constructores, getters, setters, equals, y hashCode
+
+    public UsersRolesId() {}
+
+    public UsersRolesId(Long userId, Long roleId) {
+        this.userId = userId;
+        this.roleId = roleId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
