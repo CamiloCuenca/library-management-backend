@@ -13,18 +13,35 @@ public class RoleService {
     @Autowired
     RoleRepository roleRepository;
 
+    /** this method returns all roles
+     *
+     * @return All roles
+     */
     public List<Role> getRoles(){
         return roleRepository.findAll();
     }
 
+    /** this method return a specific role
+     *
+     * @param id
+     * @return specific role
+     */
     public Optional<Role> getRole(Long id){
         return roleRepository.findById(id);
     }
 
+    /** this method savo or update a role
+     *
+     * @param role
+     */
     public void saveOrUpdate(Role role){
         roleRepository.save(role);
     }
 
+    /** this method delete a specific role
+     *
+     * @param id
+     */
     public void delete(Long id){
         roleRepository.deleteById(id);
     }

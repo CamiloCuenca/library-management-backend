@@ -13,18 +13,35 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
+    /** This method returns all users of the repository
+     *
+     * @return All users
+     */
     public List<User> getUsers(){
         return userRepository.findAll();
     }
 
+    /** This method return a specific user
+     *
+     * @param id
+     * @return specific user
+     */
     public Optional<User> getUser(Long id){
         return userRepository.findById(id);
     }
 
+    /** this method save or update a user
+     *
+     * @param user
+     */
     public void saveOrUpdate(User user){
         userRepository.save(user);
     }
 
+    /** This method delete a specific user
+     *
+     * @param id
+     */
     public void delete(Long id){
         userRepository.deleteById(id);
     }

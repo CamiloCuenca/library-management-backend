@@ -16,18 +16,36 @@ public class UserRolesService {
     @Autowired
     private UsersRolesRepository usersRolesRepository;
 
+    /** this method returns all user roles
+     *
+     * @return All user roles
+     */
     public List<UsersRoles> findAll() {
         return usersRolesRepository.findAll();
     }
 
+    /** This method return a specific user roles
+     *
+     * @param id
+     * @return specific user roles
+     */
     public Optional<UsersRoles> findById(UsersRolesId id) {
         return usersRolesRepository.findById(id);
     }
 
+    /** this method save or update a users roles
+     *
+     * @param usersRoles
+     * @return
+     */
     public UsersRoles save(UsersRoles usersRoles) {
         return usersRolesRepository.save(usersRoles);
     }
 
+    /** this method delete a specific user role
+     *
+     * @param id
+     */
     public void deleteById(UsersRolesId id) {
         usersRolesRepository.deleteById(id);
     }
