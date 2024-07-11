@@ -6,7 +6,9 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "users-roles")
+
 public class UsersRoles {
+
     @EmbeddedId
     private UsersRolesId id;
 

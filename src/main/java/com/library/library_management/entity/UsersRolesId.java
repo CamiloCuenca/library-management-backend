@@ -14,10 +14,10 @@ public class UsersRolesId implements Serializable {
     private Long userId;
     private Long roleId;
 
-    // Constructores, getters, setters, equals, y hashCode
-
+    //empty constructor
     public UsersRolesId() {}
 
+    //constructor
     public UsersRolesId(Long userId, Long roleId) {
         this.userId = userId;
         this.roleId = roleId;
